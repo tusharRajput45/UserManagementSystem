@@ -1,0 +1,13 @@
+<% include('./../layout/header.ejs') %>
+<h1>User Registration</h1>
+<form action="http://13.233.72.26:3000/edituser" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="name" placeholder="Enter name" required><br><br>
+    <input type="email" name="email" placeholder="Enter email" required><br><br>
+    <input type="text" name="mno" placeholder="Enter PhoneNumber" required><br><br>
+    <input type="file" name="image" required><br><br>
+    <input type="text" name="password" placeholder="Enter password" required><br><br>
+    <input type="hidden" name ="token" value="<%= token%>">
+    <input type="submit" value="UpdateData">
+</form>
+<% include('./../layout/footer.ejs') %>
+ 

@@ -1,0 +1,17 @@
+<% include('./../layout/header.ejs') %>
+<% if (typeof message!== 'undefined') { %>
+<h3><%=message%></h3>
+<% } %>
+<h1>Email verification</h1>
+<form action="/verfication" method="post" enctype="application/x-www-form-urlencoded">
+  <input type="email" name="email" placeholder="Enter email" required><br><br>
+  <input type="submit" value="Send verification link">
+</form>
+<% if (typeof message!== 'undefined') {%>
+<p><%= message %></p>
+<%} else {%>
+<p>Email is verifed</p>
+<%} %>
+<button><a href="/forget">forget password</a></button>
+<a href="/verification">Email verification</a>
+<% include('./../layout/footer.ejs') %>

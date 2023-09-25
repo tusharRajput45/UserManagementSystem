@@ -1,0 +1,9 @@
+<% include('./../layout/header.ejs') %>
+<h1>Admin login</h1>
+<form action="/admin/adminlogin" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="email" name="email" id="email"><br><br>
+    <input type="password" name="password" id="password"><br><br>
+    <input type="submit" value="Login" >
+</form>
+<a href="/forget">forget password</a>
+<% include('./../layout/footer.ejs')%>

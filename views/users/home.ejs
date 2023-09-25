@@ -1,0 +1,21 @@
+<% include('./../layout/header.ejs') %>
+
+<h1>Login successfully</h1>
+<table border="2">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Email-address</th>
+        <th>Phone-Number</th>
+    </tr>
+    <tr>
+        <td><img src="/userimage/<%= user.image%>" width="200px" alt=""></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.PhoneNumber %></td>
+    </tr>
+</table>
+<button><a href="/logout">logout</a></button>
+<a href="/edit/?id=<%=user._id %>">Edit</a>
+<% include('./../layout/footer.ejs') %>
+ 

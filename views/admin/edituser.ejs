@@ -1,0 +1,19 @@
+<% include('./../layout/header.ejs') %>
+<h1>Update user</h1>
+<form action="/admin/edituser" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="name" placeholder="Enter name" value="<%= user.name  %>" required ><br><br>
+    <input type="email" name="email" placeholder="Enter email" value="<%= user.email  %>" required><br><br>
+    <input type="text" name="mno" placeholder="Enter PhoneNumber" value="<%= user.PhoneNumber %>" required><br><br>
+    <label for="verified">Verified</label>
+    <input type="radio" name="verified" id="radio" value="1" <% if (user.isverified===1) {
+        %> checked<%
+    } %>>
+    <label for="Not verified">Not verified</label>
+    <input type="radio" name="verified" id="" value="0" <% if (user.isverified === 0) {
+        %>checked<%
+    }%>>
+    <input type="hidden" name="id" value="<%= user._id%>">
+    <input type="submit" value="Update user">
+</form>
+<a href="admin/dashboard">Dashboard</a>
+<% include('./../layout/footer.ejs') %>

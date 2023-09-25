@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+</head>
+<body>
+<table width="80%">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Image</th>
+        <th>Verified</th>
+        <th>  Action</th>
+    </tr>
+    <% if (users.length>0) {
+        for (let index = 0; index < users.length; index++) {
+          %>
+          <tr>
+            <td><%= users[index].name%></td>
+            <td><%= users[index].email%></td>
+            <td><%= users[index].PhoneNumber%></td>
+            <td><img src="http://127.0.0.1:3000/userimage/<%= users.image%>" alt="" width="150px"></td>
+            <td><% if (users[index].isverified===1) {
+                %> Verified<%
+            } else {
+                %>not Verified<%
+            }%></td>
+            </tr>
+          <%
+            
+        }
+    } else {
+        %>
+        <tr><td>Users Not found</td></tr>
+        <%
+    } %>
+</table>
+<a href="/admin/home">Home</a>
+</body>
+</html>

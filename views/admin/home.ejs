@@ -1,0 +1,17 @@
+<% include('./../layout/header.ejs') %>
+<h1><%= admin.name %></h1>
+<a href="/admin/dasboard">Dashboard</a>
+<table>
+    <tr>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        <th>Profile picture1</th>
+    </tr>
+    <tr>
+        <td><%= admin.email %></td>
+        <td><%= admin.PhoneNumber %></td>
+        <td><img src="userimage/<%= admin.image%>" alt=""></td>
+    </tr>
+</table>
+<button><a href="/admin/logout">Logout</a></button>
+<% include('./../layout/footer.ejs') %>
